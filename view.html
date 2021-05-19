@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<head>
+    <title>AMC</title>
+    <!----<link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}"> -->
+
+<style>
+
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 80%;
+  margin-left: 3cm;
+  margin-top: 3cm;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #17055a;
+  color: white;
+
+</style>
+
+</head>
+<body>
+{% block content %}
+<h1> Employ details </h1>
+{% if employees %}
+    <table id = "customers">
+        <tr>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Age</th>
+            <th>Location</th>
+            <th>Country</th>
+        </tr>
+        {% for e in employees %}
+        <tr>
+          <td>{{ e.Name }}</td>
+          <td>{{ e.Address }}</td>
+          <td>{{ e.age }}</td>
+          <td>{{ e.Location }}</td>
+          <td>{{ e.Country }}</td>
+        </tr>
+        {% endfor %}
+    
+    </table>
+{% endif %}
+{% endblock %}
+
+</body>
+</html>
