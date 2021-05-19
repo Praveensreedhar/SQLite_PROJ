@@ -23,7 +23,7 @@ def employ():
     results = conn.execute("SELECT * FROM Device")
     employees = results.fetchall()
     #print(employees)
-    return render_template('home.html', employees=employees)
+    return render_template('view.html', employees=employees)
 
     conn.close()
     
